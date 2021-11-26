@@ -7,11 +7,11 @@ from random import randint, choice
 class Hiir(pygame.sprite.Sprite):
     def __init__(self):
         super().__init__()
-        hiir_walk1 = pygame.image.load(os.path.join("hiir1.png")).convert_alpha()
-        hiir_walk2 = pygame.image.load(os.path.join("hiir2.png")).convert_alpha()
+        hiir_walk1 = pygame.image.load(os.path.join("photos/hiir1.png")).convert_alpha()
+        hiir_walk2 = pygame.image.load(os.path.join("photos/hiir2.png")).convert_alpha()
         self.hiir_walk = [hiir_walk1, hiir_walk2]
         self.hiir_index = 0
-        self.hiir_jump = pygame.image.load(os.path.join("hiir3.png")).convert_alpha()
+        self.hiir_jump = pygame.image.load(os.path.join("photos/hiir3.png")).convert_alpha()
         
         self.image = self.hiir_walk[self.hiir_index]
         self.rect = self.image.get_rect(midbottom=(100,295))
@@ -50,13 +50,13 @@ class Enemy(pygame.sprite.Sprite):
         super().__init__()
         
         if type == 'kass':
-            kass_frame1 = pygame.image.load(os.path.join("kass1.png")).convert_alpha()
-            kass_frame2 = pygame.image.load(os.path.join("kass2.png")).convert_alpha()
+            kass_frame1 = pygame.image.load(os.path.join("photos/kass1.png")).convert_alpha()
+            kass_frame2 = pygame.image.load(os.path.join("photos/kass2.png")).convert_alpha()
             self.frames = [kass_frame1,kass_frame2]
             y_pos = 295
         else:
-            tuulelohe_frame1 = pygame.image.load(os.path.join("tuulelohe.png")).convert_alpha()
-            tuulelohe_frame2 = pygame.image.load(os.path.join("tuulelohe2.png")).convert_alpha()
+            tuulelohe_frame1 = pygame.image.load(os.path.join("photos/tuulelohe.png")).convert_alpha()
+            tuulelohe_frame2 = pygame.image.load(os.path.join("photos/tuulelohe2.png")).convert_alpha()
             self.frames=[tuulelohe_frame1,tuulelohe_frame2]
             y_pos = randint(100,200)
         
@@ -111,10 +111,10 @@ hiir.add(Hiir())
 enemy_group = pygame.sprite.Group()
 
 #background
-sky_surface = pygame.image.load(os.path.join("taust.png")).convert()
+sky_surface = pygame.image.load(os.path.join("photos/taust.png")).convert()
 
 #intro screen
-intro_hiir = pygame.image.load(os.path.join("hiir1.png")).convert_alpha()
+intro_hiir = pygame.image.load(os.path.join("photos/hiir1.png")).convert_alpha()
 intro_surface = pygame.transform.scale2x(intro_hiir)
 intro_rect = intro_surface.get_rect(center=(400,200))
 
